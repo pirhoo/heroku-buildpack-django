@@ -87,6 +87,7 @@ if (grep -Fiq "hg+" requirements.txt) then
 fi
 
 # Install dependencies.
+pip install distribute==0.6.30
 echo "-----> Installing dependencies using pip version $(pip --version | awk '{print $2}')"
 pip install --use-mirrors -r requirements.txt --src ./.heroku/src | indent
 
