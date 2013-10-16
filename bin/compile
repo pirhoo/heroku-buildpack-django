@@ -121,4 +121,4 @@ fi
 
 echo "-----> Installing dependencies with Bower"
 # Load bower packages
-$1/manage.py bower_install
+$1/manage.py bower_install -- --interactive=false
