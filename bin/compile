@@ -121,6 +121,6 @@ fi
 
 echo "-----> Installing dependencies with Bower"
 # Clean bower's cache dir
-rm -rf $CACHE_DIR/.cache/bower/
+rm -rf $CACHE_DIR/.cache/
 # Load bower packages
 $1/manage.py bower_install -- --force --interactive=false
