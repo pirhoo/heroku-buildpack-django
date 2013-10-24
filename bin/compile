@@ -120,7 +120,9 @@ if [ -f $1/npm_requirements.txt ]; then
 fi
 
 echo "-----> Installing dependencies with Bower"
+# Force uninstall all package
+bower list
 # Clean bower's cache dir
-rm -rf $CACHE_DIR/.cache/bower
+bower cache clean
 # Load bower packages
-$1/manage.py bower_install -- --force --interactive=false
+bower install --force
