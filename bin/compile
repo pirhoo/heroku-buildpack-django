@@ -120,8 +120,16 @@ if [ -f $1/npm_requirements.txt ]; then
 fi
 
 echo "-----> Installing dependencies with Bower"
-# Uninstall all bower packages
-bower list -p | grep -oE  '".*":' | sed 's/"\(.*\)":/\1/'| xargs bower uninstall
+# All bower packages
+BOWER_LIST=`bower list -p`
+# If the list is not empty
+if [ "$BOWER_LIST" != '{}' ]
+    then 
+        # Extract packages names line by line
+        BOWER_FREEZE=`echo "$BOWER_LIST" | grep -oE  '".*":' | sed 's/"\(.*\)":/\1/'`
+        # Uninstall the packages
+        echo "$BOWER_FREEZE" | xargs bower uninstall
+fi
 # Clean bower's cache dir
 bower cache clean
 # Load bower packages
