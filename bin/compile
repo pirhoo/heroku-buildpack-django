@@ -120,8 +120,6 @@ if [ -f $1/npm_requirements.txt ]; then
 fi
 
 echo "-----> Installing dependencies with Bower"
-ls $BUILD_DIR
-ls $CACHE_DIR
 cd $BUILD_DIR
 # Clean bower's cache dir
 bower cache clean
