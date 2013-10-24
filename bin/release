@@ -8,7 +8,7 @@ NAME=$($BIN_DIR/detect $BUILD_DIR) || exit 1
 cat <<EOF
 ---
 config_vars:
-  PATH: bin:node_modules/.bin:/app/bin:/usr/local/bin:/usr/bin:/bin
+  PATH: /app/static/components/:bin:node_modules/.bin:/app/bin:/usr/local/bin:/usr/bin:/bin
   PYTHONUNBUFFERED: true
   LIBRARY_PATH: .heroku/vendor/lib
   LD_LIBRARY_PATH: .heroku/vendor/lib
