@@ -121,7 +121,7 @@ fi
 
 echo "-----> Installing dependencies with Bower"
 cd $BUILD_DIR
-BOWER_STORAGE_CACHE=$BUILD_DIR/bower_storage
+BOWER_STORAGE_CACHE=$CACHE_DIR/bower_storage
 # We stock cache package
 export bower_storage__cache=$BOWER_STORAGE_CACHE
 # Empty cache dir
